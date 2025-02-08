@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20250118 23:39:37.140" rpa="false" schemaversion="3">
+<suite id="s1" name="Ynmo" source="D:\Automation\Automation-Learning-track\Test\ynmo.Robot">
+<kw name="begin the all tests" library="Common" type="SETUP">
+<arg>${Base_URL}</arg>
+<arg>${Browser}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="luanch the app" library="Common">
+<arg>${Base_URL}</arg>
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Base_URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250118 23:39:37.490" level="INFO">Opening browser 'Chrome' to base url 'https://test-app-revamp.ynmodata.com/auth/login'.</msg>
+<status status="PASS" starttime="20250118 23:39:37.489" endtime="20250118 23:39:39.384"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250118 23:39:39.385" endtime="20250118 23:40:03.268"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${sign-up-icon}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20250118 23:40:03.268" endtime="20250118 23:40:03.286"/>
+</kw>
+<status status="PASS" starttime="20250118 23:39:37.487" endtime="20250118 23:40:03.287"/>
+</kw>
+<kw name="lOGIN" library="Common">
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username-TextBox}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:03.289" level="INFO">Typing text 'mona.abdelrahim+cent10@trianglz.com' into text field 'id=login-username'.</msg>
+<status status="PASS" starttime="20250118 23:40:03.288" endtime="20250118 23:40:03.602"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password-TextBox}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:03.603" level="INFO">Typing text 'P@ssw0rd' into text field 'id=login-password'.</msg>
+<status status="PASS" starttime="20250118 23:40:03.603" endtime="20250118 23:40:03.757"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:03.758" level="INFO">Clicking button 'id=login_btn'.</msg>
+<status status="PASS" starttime="20250118 23:40:03.757" endtime="20250118 23:40:03.916"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:13.917" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:03.916" endtime="20250118 23:40:13.917"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:03.287" endtime="20250118 23:40:13.917"/>
+</kw>
+<status status="PASS" starttime="20250118 23:39:37.487" endtime="20250118 23:40:13.918"/>
+</kw>
+<test id="s1-t1" name="verfy Adding a new family with only mandatory Fields" line="23">
+<kw name="Navigate to Family sceen" library="Home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Nav-Family-button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:13.921" level="INFO">Clicking element 'id=sidebar-navigate-to-8'.</msg>
+<status status="PASS" starttime="20250118 23:40:13.920" endtime="20250118 23:40:14.022"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:19.023" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:14.022" endtime="20250118 23:40:19.023"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:13.919" endtime="20250118 23:40:19.024"/>
+</kw>
+<kw name="Add Family with mandatory Fields" library="Family">
+<arg>&amp;{Mandatory_Family_Data}</arg>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Add-Family-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:19.034" level="INFO">Clicking button 'id=families-header-action-button'.</msg>
+<status status="PASS" starttime="20250118 23:40:19.031" endtime="20250118 23:40:19.169"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:22.170" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:19.169" endtime="20250118 23:40:22.170"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-firstName}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:22.171" level="INFO">Typing text 'Mina' into text field 'id=save-family-firstName'.</msg>
+<status status="PASS" starttime="20250118 23:40:22.170" endtime="20250118 23:40:22.321"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-lastName}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:22.322" level="INFO">Typing text 'ayman' into text field 'id=save-family-lastName'.</msg>
+<status status="PASS" starttime="20250118 23:40:22.322" endtime="20250118 23:40:22.530"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:22.531" level="INFO">Typing text 'mina.ayman1@trianglz.com' into text field 'id=save-family-email'.</msg>
+<status status="PASS" starttime="20250118 23:40:22.530" endtime="20250118 23:40:22.749"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:22.750" level="INFO">Typing text 'mina_ayman' into text field 'id=save-family-username'.</msg>
+<status status="PASS" starttime="20250118 23:40:22.749" endtime="20250118 23:40:22.920"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${save-family-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:22.921" level="INFO">Clicking button 'id=save-family-save'.</msg>
+<status status="PASS" starttime="20250118 23:40:22.920" endtime="20250118 23:40:23.024"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:19.026" endtime="20250118 23:40:23.024"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:13.918" endtime="20250118 23:40:23.025"/>
+</test>
+<test id="s1-t2" name="verfy Adding a new family with Both mandatory &amp; Optinal Fields" line="28">
+<kw name="Navigate to Family sceen" library="Home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Nav-Family-button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:23.030" level="INFO">Clicking element 'id=sidebar-navigate-to-8'.</msg>
+<status status="PASS" starttime="20250118 23:40:23.029" endtime="20250118 23:40:23.167"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:28.168" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:23.167" endtime="20250118 23:40:28.169"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:23.029" endtime="20250118 23:40:28.170"/>
+</kw>
+<kw name="Add Family with Both mandatory &amp; Optinal Fields" library="Family">
+<arg>&amp;{Mandatory/optinal_Family_Data}</arg>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Add-Family-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:28.181" level="INFO">Clicking button 'id=families-header-action-button'.</msg>
+<status status="PASS" starttime="20250118 23:40:28.175" endtime="20250118 23:40:28.340"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:31.342" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:28.340" endtime="20250118 23:40:31.342"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-firstName}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:31.344" level="INFO">Typing text 'Mina' into text field 'id=save-family-firstName'.</msg>
+<status status="PASS" starttime="20250118 23:40:31.342" endtime="20250118 23:40:31.502"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-lastName}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:31.503" level="INFO">Typing text 'ayman' into text field 'id=save-family-lastName'.</msg>
+<status status="PASS" starttime="20250118 23:40:31.502" endtime="20250118 23:40:31.699"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-mobile}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:31.700" level="INFO">Typing text '01202261994' into text field 'id=save-family-mobile'.</msg>
+<status status="PASS" starttime="20250118 23:40:31.700" endtime="20250118 23:40:31.860"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:31.860" level="INFO">Typing text 'mina.ayman1@trianglz.com' into text field 'id=save-family-email'.</msg>
+<status status="PASS" starttime="20250118 23:40:31.860" endtime="20250118 23:40:32.070"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:32.071" level="INFO">Typing text 'mina_ayman' into text field 'id=save-family-username'.</msg>
+<status status="PASS" starttime="20250118 23:40:32.071" endtime="20250118 23:40:32.230"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${auto-generated-password}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:32.231" level="INFO">Clicking button 'id=save-family-toggle-auto-generated-password'.</msg>
+<status status="PASS" starttime="20250118 23:40:32.230" endtime="20250118 23:40:32.341"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:32.342" level="INFO">Typing text '1234567Aa#' into text field 'id=save-family-password'.</msg>
+<status status="PASS" starttime="20250118 23:40:32.341" endtime="20250118 23:40:32.580"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${upload-image-button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:32.581" level="INFO">Clicking element '//a[@id='save-family-image-uploader-upload-image']'.</msg>
+<status status="PASS" starttime="20250118 23:40:32.580" endtime="20250118 23:40:32.654"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:37.655" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:32.654" endtime="20250118 23:40:37.655"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>//input[@type='file' and contains(@class, 'hidden')]</arg>
+<arg>${image}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20250118 23:40:37.656" level="INFO">Sending D:\Automation\Automation-Learning-track\Resources\testimage.jpeg to browser.</msg>
+<status status="PASS" starttime="20250118 23:40:37.656" endtime="20250118 23:40:37.713"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:42.715" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250118 23:40:37.713" endtime="20250118 23:40:42.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${family-children-drop-down-list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:42.724" level="INFO">Clicking element '//*[@id="save-family"]/div[1]/div[1]/div[11]/yn-select/div/nz-select/nz-select-arrow/div/span'.</msg>
+<status status="PASS" starttime="20250118 23:40:42.720" endtime="20250118 23:40:42.851"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:43.852" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250118 23:40:42.851" endtime="20250118 23:40:43.852"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${family-children-search}</arg>
+<arg>${children}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:43.854" level="INFO">Typing text 'Mina 01' into text field '//input[@id='save-family-link-children-select-input']'.</msg>
+<status status="PASS" starttime="20250118 23:40:43.852" endtime="20250118 23:40:44.094"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:45.095" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250118 23:40:44.095" endtime="20250118 23:40:45.096"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//nz-option-item[@title='${children}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:45.100" level="INFO">Clicking element '//nz-option-item[@title='Mina 01']'.</msg>
+<status status="PASS" starttime="20250118 23:40:45.098" endtime="20250118 23:40:45.209"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250118 23:40:46.210" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250118 23:40:45.209" endtime="20250118 23:40:46.210"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${save-family-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250118 23:40:46.212" level="INFO">Clicking button 'id=save-family-save'.</msg>
+<status status="PASS" starttime="20250118 23:40:46.210" endtime="20250118 23:40:46.340"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:28.172" endtime="20250118 23:40:46.340"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:23.027" endtime="20250118 23:40:46.342"/>
+</test>
+<kw name="End all test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250118 23:40:46.344" endtime="20250118 23:40:48.741"/>
+</kw>
+<status status="PASS" starttime="20250118 23:40:46.344" endtime="20250118 23:40:48.742"/>
+</kw>
+<status status="PASS" starttime="20250118 23:39:37.142" endtime="20250118 23:40:48.743"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Ynmo">Ynmo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
